@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+	 http://www.springframework.org/schema/context 
+	 http://www.springframework.org/schema/context/spring-context-2.5.xsd  
+	 http://www.springframework.org/schema/aop  
+	 http://www.springframework.org/schema/aop/spring-aop-2.5.xsd  
+	 http://code.alibabatech.com/schema/dubbo 
+	 http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+	 http://www.springframework.org/schema/tx  
+	 http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+	 http://www.springframework.org/schema/mvc  
+	 http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd"
+	default-lazy-init="true">
+	<!-- Dubbo应用名称，通常使用项目名称即可 -->
+	<dubbo:application name="dubbo-service"></dubbo:application>
+	<!-- 配置Dubbo注册中心 -->
+	<dubbo:registry address="zookeeper://192.168.2.157:2181"></dubbo:registry>
+	
+	<dubbo:annotation package="com.asher.dubbo.imp"/>
+</beans>
+
